@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+ 
+  <title>PARAGRAPH WRITING PRESENTATION</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #3498db;
+      animation: background-color 5s linear alternate infinite;
+    }
+
+    .container {
+      text-align: center;
+    }
+    h2 {
+      position: absolute;
+      top: 0;
+      left:0;
+      transform:translate(0%,0%);
+      padding: 10px;
+    }
+    div {
+      color: #fff;
+      font-size: 2vw;
+      border: none;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .pagination li a {
+      padding: 10px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div>
+      <h2>
+        Human life is all about collecting experience. but we do not remember all the experiences. write a couple of paragraphs on the most striking experience you have had in approximately 150 words.
+      </h2>
+      <p id="typing-text">
+        <!-- The content will be typed here -->
+      </p>
+      <audio controls>
+          <source src='demo.mp3' type="audio/mpeg"></source>
+      </audio>
+    </div>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="index.html">index</a></li>
+        <li class="page-item"><a class="page-link" href="one.html">1</a></li>
+        <li class="page-item"><a class="page-link" href="two.html">2</a></li>
+        <li class="page-item"><a class="page-link" href="three.html">3</a></li>
+        <li class="page-item"><a class="page-link" href="four.html">4</a></li>
+        <li class="page-item"><a class="page-link" href="five.html">5</a></li>
+        <li class="page-item"><a class="page-link" href="six.html">6</a></li>
+        <li class="page-item"><a class="page-link" href="seven.html">7</a></li>
+        <li class="page-item"><a class="page-link" href="eight.html">8</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <script>
+    const text = `In retrospect, my time in the remote village of Nepal was not just a journey of volunteerism, but a profound exploration of humanity and nature. The resilience of the villagers in the face of adversity, coupled with the awe-inspiring beauty of the Himalayas, left an indelible mark on my heart. As I bid farewell to the village and its inhabitants, I carried with me not only cherished memories but also invaluable lessons in gratitude, compassion, and resilience.
+  
+    Moreover, the experience illuminated the interconnectedness of all living beings and the transformative power of empathy. In the simplicity of daily life and the warmth of human connection, I found a profound sense of belonging and purpose. The bonds forged amidst shared laughter, tears, and moments of solidarity transcended cultural differences, reaffirming our common humanity.
+    
+    In the tapestry of life, my time in Nepal's remote village remains a vibrant thread, weaving together the fabric of my journey with profound meaning and purpose. It serves as a reminder to embrace life's challenges with grace and to find strength and inspiration in the simplest of moments. As I carry forward the lessons learned and the memories cherished, I am grateful for the opportunity to have been touched by the resilience and beauty of the human spirit amidst the majestic backdrop of the Himalayas.`;
+
+    const typingTextElement = document.getElementById('typing-text');
+    let index = 0;
+
+    function typeText() {
+      if (index < text.length) {
+        typingTextElement.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeText, 50); // Adjust typing speed here (milliseconds)
+      }
+    }
+
+    // Start typing when the window loads
+    window.onload = typeText;
+  </script>
+</body>
+</html>
